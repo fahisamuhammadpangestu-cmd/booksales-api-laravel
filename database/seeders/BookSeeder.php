@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-// TAMBAHKAN BARIS INI:
+
 use App\Models\Book; 
 
 class BookSeeder extends Seeder
