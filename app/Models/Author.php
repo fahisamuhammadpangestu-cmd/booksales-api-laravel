@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Author;
 
 class Author extends Model
 {
@@ -17,4 +18,6 @@ class Author extends Model
     public function getAuthors() {
         return $this->authors;
     }
+
+    protected $guarded = [];
 }

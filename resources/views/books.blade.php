@@ -8,14 +8,12 @@
 <body>
   <h1>Daftar Buku</h1>
 <ul>
-    @foreach($books as $item)
-        <li>
-            <strong>Judul:</strong> {{ $item['title'] }} <br>
-            <strong>Harga:</strong> Rp{{ number_format($item['price']) }} <br>
-            <strong>Stok:</strong> {{ $item['stock'] }}
-        </li>
-        <hr>
+   <h1>Daftar Penulis</h1>
+<ul>
+    @foreach($books as $book)    
+    <li>{{ $book->title }}</li>
     @endforeach
+</ul>
 </ul>
 </body>
 </html>

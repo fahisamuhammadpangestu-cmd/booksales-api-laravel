@@ -8,8 +8,7 @@ use App\Models\Book;
 class BookController extends Controller
 {
    public function index() {
-        $bookModel = new Book();
-        $allBooks = $bookModel->getBooks();
-        return view('books', ['books' => $allBooks]);
+       $books = Book::all();
+        return view('books', ['books' => $books]);
     }
 }

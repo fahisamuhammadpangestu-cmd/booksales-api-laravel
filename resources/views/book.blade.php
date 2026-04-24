@@ -7,6 +7,14 @@
 </head>
 <body>
   <h1>Daftar Buku</h1>
-  <p>Halo, ini adalah halaman buku yang dipanggil melalui Controller!</p>
+<ul>
+    @foreach($books as $book)
+        <li>
+            <strong>Judul:</strong> {{ $book->title }} <br>
+            <strong>Harga:</strong> Rp{{ number_format($book->price) }}
+        </li>
+        <hr>
+    @endforeach
+</ul>
 </body>
 </html>
