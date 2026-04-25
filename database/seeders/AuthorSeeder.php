@@ -2,24 +2,38 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Author;
 
 class AuthorSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $authors = [
-        ['name' => 'Tere Liye', 'city' => 'Jakarta'],
-        ['name' => 'Dee Lestari', 'city' => 'Bandung'],
-        ['name' => 'Andrea Hirata', 'city' => 'Belitung'],
-        ['name' => 'Pramoedya Ananta Toer', 'city' => 'Blora'],
-        ['name' => 'Ahmad Fuadi', 'city' => 'Maninjau'],
-    ];
-    foreach ($authors as $data) { Author::create($data); }
+            [
+                'name' => 'Tere Liye',
+                'photo' => 'tere_liye.jpg',
+            ],
+            [
+                'name' => 'Dee Lestari',
+                'photo' => 'dee_lestari.jpg',
+            ],
+            [
+                'name' => 'Andrea Hirata',
+                'photo' => 'andrea_hirata.jpg',
+            ],
+            [
+                'name' => 'Pramoedya Ananta Toer',
+                'photo' => 'pramoedya.jpg',
+            ],
+            [
+                'name' => 'Ahmad Fuadi',
+                'photo' => 'ahmad_fuadi.jpg',
+            ],
+        ];
+
+        foreach ($authors as $data) {
+            Author::create($data);
+        }
     }
 }

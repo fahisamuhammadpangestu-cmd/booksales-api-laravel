@@ -9,7 +9,7 @@ class GenreController extends Controller
 {
    public function index()
 {
-    $genres = Genre::all(); // Mengambil data dari MODEL
+    $genres = Genre::all();
 
     if ($genres->isEmpty()) {
         return response()->json([
@@ -26,7 +26,7 @@ class GenreController extends Controller
 }
 public function store(Request $request) {
     $validator = Validator::make($request->all(), [
-        'name' => 'required|string|max:50|unique:genres', // 'genres' adalah nama tabel
+        'name' => 'required|string|max:50|unique:genres', 
     ]);
 
     if ($validator->fails()) {
@@ -37,7 +37,8 @@ public function store(Request $request) {
     }
 
     $genre = Genre::create([
-        'name' => $request->name
+    'name' => $request->name,
+    'description' => $request->description 
     ]);
 
     return response()->json([

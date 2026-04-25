@@ -36,7 +36,7 @@ class BookController extends Controller
 }
 public function store(Request $request)
 {
-    // 1. Validasi Data
+
     $validator = Validator::make($request->all(), [
         'title'       => 'required|string|max:100',
         'description' => 'required|string',
@@ -47,7 +47,7 @@ public function store(Request $request)
         'author_id'   => 'required|exists:authors,id',
     ]);
 
-    // 2. Cek jika validasi gagal
+
     if ($validator->fails()) {
         return response()->json([
             'success' => false,
@@ -55,11 +55,9 @@ public function store(Request $request)
         ], 422);
     }
 
-    // 3. Handle Upload Gambar
     $image = $request->file('cover');
     $image->storeAs('public/books', $image->hashName());
 
-    // 4. Insert Data ke Database
     $book = Book::create([
         'title'       => $request->title,
         'description' => $request->description,
@@ -70,7 +68,7 @@ public function store(Request $request)
         'author_id'   => $request->author_id,
     ]);
 
-    // 5. Response Berhasil
+ 
     return response()->json([
         'success' => true,
         'message' => 'Resource added successfully',

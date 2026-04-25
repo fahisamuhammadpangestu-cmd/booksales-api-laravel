@@ -13,7 +13,7 @@ return new class extends Migration
      Schema::create('genres', function (Blueprint $table) {
         $table->id();
         $table->string('name');         // Teks maksimal 255 karakter
-        $table->text('description');    // Teks panjang tanpa batasan
+        $table->text('description')->nullable();
         $table->timestamps();
     });
 }
