@@ -17,6 +17,9 @@ return new class extends Migration
             $table->text('description');
             $table->integer('price');
             $table->integer('stock');
+            $table->string('cover');
+            $table->unsignedBigInteger('genre_id'); // Untuk relasi nanti
+            $table->unsignedBigInteger('author_id'); // Untuk relasi nanti
             $table->timestamps();
         });
     }

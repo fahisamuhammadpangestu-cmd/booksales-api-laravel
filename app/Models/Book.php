@@ -27,4 +27,14 @@ class Book extends Model
     public function getBooks() {
         return $this->books;
     }
+    
+    protected $fillable = [
+    'title', 
+    'description', 
+    'price', 
+    'stock', 
+    'cover', 
+    'genre_id', 
+    'author_id'
+];
 }

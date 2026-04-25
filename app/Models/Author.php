@@ -19,5 +19,5 @@ class Author extends Model
         return $this->authors;
     }
 
-    protected $guarded = [];
+    protected $fillable = ['name', 'photo'];
 }
