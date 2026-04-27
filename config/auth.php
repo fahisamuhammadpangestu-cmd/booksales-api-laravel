@@ -38,10 +38,16 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+    'web' => [
+        'driver' => 'session',
+        'provider' => 'users',
+    ],
+
+    // Tambahkan atau ubah bagian API ini
+    'api' => [
+        'driver' => 'jwt', // Ganti dari 'token' atau 'session' ke 'jwt'
+        'provider' => 'users',
+    ],
     ],
 
     /*
