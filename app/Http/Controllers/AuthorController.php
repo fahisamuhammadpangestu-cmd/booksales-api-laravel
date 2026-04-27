@@ -48,7 +48,7 @@ class AuthorController extends Controller
         ], 201);
     }
 
-    // 3. SHOW DETAIL DATA (TUGAS)
+    // SHOW DETAIL DATA 
     public function show($id) {
         $author = Author::find($id);
 
@@ -66,7 +66,7 @@ class AuthorController extends Controller
         ], 200);
     }
 
-    // 4. UPDATE DATA (TUGAS)
+    // UPDATE DATA 
     public function update(Request $request, $id) {
         $author = Author::find($id);
         if (!$author) {
@@ -103,7 +103,7 @@ class AuthorController extends Controller
         ], 200);
     }
 
-    // 5. DESTROY DATA (TUGAS)
+    // DESTROY DATA 
     public function destroy($id) {
         $author = Author::find($id);
         if (!$author) {

@@ -54,7 +54,7 @@ class GenreController extends Controller
         ], 201);
     }
 
-    // 3. SHOW DETAIL DATA (TUGAS PERTEMUAN 5)
+    // SHOW DETAIL DATA
     public function show($id)
     {
         $genre = Genre::find($id);
@@ -73,7 +73,7 @@ class GenreController extends Controller
         ], 200);
     }
 
-    // 4. UPDATE DATA (TUGAS PERTEMUAN 5)
+    // UPDATE DATA
     public function update(Request $request, $id)
     {
         $genre = Genre::find($id);
@@ -106,7 +106,7 @@ class GenreController extends Controller
         ], 200);
     }
 
-    // 5. DESTROY DATA (TUGAS PERTEMUAN 5)
+    // DESTROY DATA 
     public function destroy($id)
     {
         $genre = Genre::find($id);
