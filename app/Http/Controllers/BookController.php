@@ -12,6 +12,8 @@ class BookController extends Controller
     // 1. READ ALL DATA
     public function index()
     {
+        $books = Book::with(['author', 'genre'])->get(); 
+
         $books = Book::all();
         return response()->json([
             'success' => true,
@@ -64,7 +66,7 @@ class BookController extends Controller
     // SHOW DATA
     public function show($id)
     {
-        $book = Book::find($id);
+        $book = Book::with(['author', 'genre'])->find($id);
 
         if (!$book) {
             return response()->json([
